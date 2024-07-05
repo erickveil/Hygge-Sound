@@ -58,12 +58,15 @@ class MainActivity : ComponentActivity() {
         var brownNoise = 0.0
 
         audioTrack?.play()
+        var lastOutput = 0.0
 
         Thread {
             while (audioTrack?.playState == AudioTrack.PLAYSTATE_PLAYING) {
                 for (i in buffer.indices) {
-                    brownNoise += Random.nextDouble(-1.0, 1.0)
-                    brownNoise *= 0.03 // Scale the noise
+                    val whiteNoise = Random.nextDouble(-1.0, 1.0)
+                    brownNoise = (lastOutput + (0.02 * whiteNoise)) / 1.02
+                    lastOutput = brownNoise
+                    brownNoise *= 3.5 // Volume
                     buffer[i] = (brownNoise * Short.MAX_VALUE).toInt().toShort()
                 }
                 audioTrack?.write(buffer, 0, buffer.size)
