@@ -1,5 +1,5 @@
 package net.erickveil.calmsound.model
 
-class BrownNoiseState {
+data class BrownNoiseState (
     val isPlaying: Boolean = false
-}
+)
