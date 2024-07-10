@@ -26,6 +26,7 @@ class BrownNoiseViewModel() : ViewModel() {
     fun processIntent(intent: BrownNoiseIntent) {
         when (intent) {
             is BrownNoiseIntent.TogglePlayback -> togglePlayback()
+            is BrownNoiseIntent.AudioDeviceDisconnected -> stopBrownNoise()
         }
     }
 
