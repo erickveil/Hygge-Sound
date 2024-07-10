@@ -1,8 +1,12 @@
 package net.erickveil.calmsound.viewmodel
 
+import android.app.Application
+import android.content.Context
+import android.content.IntentFilter
 import android.media.AudioFormat
 import android.media.AudioManager
 import android.media.AudioTrack
+import androidx.lifecycle.AndroidViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import net.erickveil.calmsound.intent.BrownNoiseIntent
@@ -10,9 +14,10 @@ import net.erickveil.calmsound.model.BrownNoiseState
 import kotlin.random.Random
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.launch
 
-class BrownNoiseViewModel : ViewModel() {
+class BrownNoiseViewModel() : ViewModel() {
 
     private var audioTrack: AudioTrack? = null
     private val _state = MutableStateFlow(BrownNoiseState())
@@ -21,6 +26,7 @@ class BrownNoiseViewModel : ViewModel() {
     fun processIntent(intent: BrownNoiseIntent) {
         when (intent) {
             is BrownNoiseIntent.TogglePlayback -> togglePlayback()
+            is BrownNoiseIntent.AudioDeviceDisconnected -> togglePlayback()
         }
     }
 
