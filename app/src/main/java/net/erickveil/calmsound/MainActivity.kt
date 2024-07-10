@@ -1,5 +1,7 @@
 package net.erickveil.calmsound
 
+import android.content.IntentFilter
+import android.media.AudioManager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -12,13 +14,23 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import net.erickveil.calmsound.intent.BrownNoiseIntent
 import net.erickveil.calmsound.model.BrownNoiseState
 import net.erickveil.calmsound.ui.theme.CalmSoundTheme
+import net.erickveil.calmsound.viewmodel.AudioDeviceReceiver
 
 class MainActivity : ComponentActivity() {
 
     private val viewModel: BrownNoiseViewModel by viewModels()
+    private lateinit var audioDeviceReceiver: AudioDeviceReceiver
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Handle speaker disconnect
+        audioDeviceReceiver = AudioDeviceReceiver {
+            viewModel.processIntent(BrownNoiseIntent.AudioDeviceDisconnected)
+        }
+        val filter = IntentFilter(AudioManager.ACTION_AUDIO_BECOMING_NOISY)
+        registerReceiver(audioDeviceReceiver, filter)
+
         setContent {
             CalmSoundTheme {
                 val state by viewModel.state.collectAsStateWithLifecycle()
@@ -30,6 +42,11 @@ class MainActivity : ComponentActivity() {
                 )
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(audioDeviceReceiver)
     }
 
     @Composable
