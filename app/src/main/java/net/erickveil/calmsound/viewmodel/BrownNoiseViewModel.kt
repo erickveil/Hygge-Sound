@@ -17,17 +17,11 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.launch
 
-class BrownNoiseViewModel(application: Application) : AndroidViewModel(application) {
+class BrownNoiseViewModel() : ViewModel() {
 
     private var audioTrack: AudioTrack? = null
-    private val audioDeviceReceiver = AudioDeviceReceiver { stopBrownNoise() }
     private val _state = MutableStateFlow(BrownNoiseState())
     val state: StateFlow<BrownNoiseState> get() = _state
-
-    init {
-        val filter = IntentFilter(AudioManager.ACTION_AUDIO_BECOMING_NOISY)
-        //ApplicationContext.registerReceiver(audioDeviceReceiver, filter)
-    }
 
     fun processIntent(intent: BrownNoiseIntent) {
         when (intent) {
