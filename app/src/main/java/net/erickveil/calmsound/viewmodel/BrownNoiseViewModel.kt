@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 class BrownNoiseViewModel : ViewModel() {
 
     private var audioTrack: AudioTrack? = null
+    private val audioDeviceReceiver = AudioDeviceReceiver { stopBrownNoise() }
     private val _state = MutableStateFlow(BrownNoiseState())
     val state: StateFlow<BrownNoiseState> get() = _state
 
