@@ -1,6 +1,6 @@
 # Hygge Sound
 
-![Hygee Sound Icon](https://raw.githubusercontent.com/erickveil/CalmSound/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp)
+![Hygge Sound Icon](https://raw.githubusercontent.com/erickveil/CalmSound/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp)
 
 Calm down now with the gentle sounds of Brown Noise, made from 100% pure, organic, home grown Math!
 
@@ -15,3 +15,5 @@ Open source code, so you can [see for yourself](https://github.com/erickveil/Cal
 Built with ultra-cool new MVI architecture, so you can rotate your screen without losing context and interrupting things, or causing any of those pesky memory leaks.
 
 Now supports both dark AND light theme phone settings, for those of you who inexplicably prefer the Android Light Theme. I don't get it, but I got you.
+
+![Hygge Girl Image](https://raw.githubusercontent.com/erickveil/Hygge-Sound/master/app/src/main/res/HyggeGirl.jpg)
