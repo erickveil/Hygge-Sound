@@ -8,11 +8,14 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -47,12 +50,17 @@ class MainActivity : ComponentActivity() {
         setContent {
             CalmSoundTheme {
                 val state by viewModel.state.collectAsStateWithLifecycle()
-                BrownNoisePlayerScreen(
-                    state = state,
-                    onTogglePlayback = {
-                        viewModel.processIntent(BrownNoiseIntent.TogglePlayback)
-                    }
-                )
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    BrownNoisePlayerScreen(
+                        state = state,
+                        onTogglePlayback = {
+                            viewModel.processIntent(BrownNoiseIntent.TogglePlayback)
+                        }
+                    )
+                }
             }
         }
     }
@@ -64,9 +72,11 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun BrownNoisePlayerScreen( state: BrownNoiseState, onTogglePlayback: () -> Unit ) {
-        Button(onClick = onTogglePlayback) {
-            Text(if (state.isPlaying) "Stop Brown Noise" else "Play Brown Noise")
-        }
+        CustomButton(
+            text = if (state.isPlaying) "Stop Calm Sound" else "Play Calm Sound",
+            drawableId = R.drawable.calmsound,
+            onClick = onTogglePlayback
+        )
     }
 
     @Composable
