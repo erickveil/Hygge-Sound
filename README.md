@@ -1,4 +1,4 @@
-# Hygee Sound
+# Hygge Sound
 
 ![Hygee Sound Icon](https://raw.githubusercontent.com/erickveil/CalmSound/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp)
 
