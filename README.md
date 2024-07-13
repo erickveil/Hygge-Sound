@@ -1,5 +1,7 @@
 # Hygee Sound
 
+![Hygee Sound Icon](https://raw.githubusercontent.com/erickveil/CalmSound/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp)
+
 Calm down now with the gentle sounds of Brown Noise, made from 100% pure, organic, home grown Math!
 
 This is not an mp3 recording of Brown Noise, so you don't have to deal with skips when the track loops. Play it foever.
