@@ -11,6 +11,7 @@
 		C77E4D642C6FDF65008399B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E4D632C6FDF65008399B2 /* ContentView.swift */; };
 		C77E4D662C6FDF66008399B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77E4D652C6FDF66008399B2 /* Assets.xcassets */; };
 		C77E4D692C6FDF66008399B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77E4D682C6FDF66008399B2 /* Preview Assets.xcassets */; };
+		C7A794962C7501CC006C98E6 /* BrownNoisePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A794952C7501CC006C98E6 /* BrownNoisePlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C77E4D632C6FDF65008399B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C77E4D652C6FDF66008399B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C77E4D682C6FDF66008399B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C7A794952C7501CC006C98E6 /* BrownNoisePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrownNoisePlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				C77E4D632C6FDF65008399B2 /* ContentView.swift */,
 				C77E4D652C6FDF66008399B2 /* Assets.xcassets */,
 				C77E4D672C6FDF66008399B2 /* Preview Content */,
+				C7A794952C7501CC006C98E6 /* BrownNoisePlayer.swift */,
 			);
 			path = "Hygge-Sound";
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C77E4D642C6FDF65008399B2 /* ContentView.swift in Sources */,
+				C7A794962C7501CC006C98E6 /* BrownNoisePlayer.swift in Sources */,
 				C77E4D622C6FDF65008399B2 /* Hygge_SoundApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
