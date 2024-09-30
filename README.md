@@ -2,6 +2,8 @@
 
 ![Hygge Sound Icon](https://github.com/erickveil/Hygge-Sound/blob/master/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp)
 
+Get the Android app on [Google Play](https://play.google.com/store/apps/details?id=net.erickveil.calmsound)
+
 Calm down now with the gentle sounds of Brown Noise, made from 100% pure, organic, home grown Math!
 
 This is not an mp3 recording of Brown Noise, so you don't have to deal with skips when the track loops. Play it foever.
