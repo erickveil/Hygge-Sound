@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace = "net.erickveil.calmsound"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "net.erickveil.calmsound"
         minSdk = 33
-        targetSdk = 34
-        versionCode = 2
-        versionName = "1.0.1"
+        targetSdk = 35
+        versionCode = 3
+        versionName = "1.0.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
